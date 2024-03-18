@@ -2,12 +2,12 @@
   {
     "icon": "Blog",
     "name": "博客",
-    "link": "https://blog.imsyy.top/"
+    "link": "https://blog.hongwuqz.space/"
   },
   {
-    "icon": "Cloud",
-    "name": "网盘",
-    "link": "https://pan.imsyy.top/"
+    "icon": "Code",
+    "name": "Leetcode",
+    "link": "https://leetcode.com/"
   },
   {
     "icon": "CompactDisc",
@@ -16,7 +16,7 @@
   },
   {
     "icon": "Compass",
-    "name": "起始页",
+    "name": "搜索页",
     "link": "https://nav.imsyy.top/"
   },
   {
@@ -26,8 +26,8 @@
   },
   {
     "icon": "Fire",
-    "name": "今日热榜",
-    "link": "https://hot.imsyy.top/"
+    "name": "CodeTop",
+    "link": "https://codetop.cc/home/"
   },
   {
     "icon": "LaptopCode",

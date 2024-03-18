@@ -6,7 +6,6 @@
       <img class="logo-img" :src="siteLogo" alt="logo" />
       <div :class="{ name: true, 'text-hidden': true, long: siteUrl[0].length >= 6 }">
         <span class="bg">{{ siteUrl[0] }}</span>
-        <span class="sm">.{{ siteUrl[1] }}</span>
       </div>
     </div>
     <!-- 简介 -->
@@ -39,7 +38,7 @@ const siteLogo = import.meta.env.VITE_SITE_MAIN_LOGO;
 // 站点链接
 const siteUrl = computed(() => {
   const url = import.meta.env.VITE_SITE_URL;
-  if (!url) return "imsyy.top".split(".");
+  if (!url) return "HongwuQz.space".split(".");
   // 判断协议前缀
   if (url.startsWith("http://") || url.startsWith("https://")) {
     const urlFormat = url.replace(/^(https?:\/\/)/, "");
@@ -94,25 +93,19 @@ watch(
     animation: fade 0.5s;
     max-width: 460px;
     .logo-img {
-      border-radius: 50%;
+      clip-path: circle(38% at 50% 50%);
       width: 120px;
     }
     .name {
+      display: flex;
+      align-items: center;
       width: 100%;
       padding-left: 22px;
-      transform: translateY(-8px);
+      transform: translateY(-4px);
       font-family: "Pacifico-Regular";
 
       .bg {
-        font-size: 5rem;
-      }
-
-      .sm {
-        margin-left: 6px;
-        font-size: 2rem;
-        @media (min-width: 720px) and (max-width: 789px) {
-          display: none;
-        }
+        font-size: 3rem;
       }
     }
     @media (max-width: 768px) {
@@ -122,7 +115,7 @@ watch(
       .name {
         height: 128px;
         .bg {
-          font-size: 4.5rem;
+          font-size: 2rem;
         }
       }
     }
