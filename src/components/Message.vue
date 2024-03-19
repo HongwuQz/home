@@ -3,7 +3,7 @@
   <div class="message">
     <!-- Logo -->
     <div class="logo">
-      <img class="logo-img" :src="siteLogo" alt="logo" />
+      <img class="logo-img" :src="siteLogo" @click="updateSiteLogo" alt="logo" />
       <div :class="{ name: true, 'text-hidden': true, long: siteUrl[0].length >= 6 }">
         <span class="bg">{{ siteUrl[0] }}</span>
       </div>
@@ -31,10 +31,12 @@ import { Icon } from "@vicons/utils";
 import { QuoteLeft, QuoteRight } from "@vicons/fa";
 import { Error } from "@icon-park/vue-next";
 import { mainStore } from "@/store";
+import { getRandomKey } from "../utils";
 const store = mainStore();
+const mainLogoUrl = import.meta.env.VITE_SITE_MAIN_LOGO;
 
 // 主页站点logo
-const siteLogo = import.meta.env.VITE_SITE_MAIN_LOGO;
+const siteLogo = ref(mainLogoUrl);
 // 站点链接
 const siteUrl = computed(() => {
   const url = import.meta.env.VITE_SITE_URL;
@@ -46,6 +48,11 @@ const siteUrl = computed(() => {
   }
   return url.split(".");
 });
+
+const updateSiteLogo = () => {
+  const randomQuery = getRandomKey()
+  siteLogo.value = `${mainLogoUrl}?v=${randomQuery}`;
+};
 
 // 简介区域文字
 const descriptionText = reactive({
